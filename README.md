@@ -1,7 +1,7 @@
 # Bitworks interview tasks for Java Junior
 
 This project is a template for tasks to be finished by a candidate.
-The project uses Maven and Java 14.
+The project uses Maven and Java 14. Docker is used for tests only.
 
 ## Distance task
 It is needed to implement methods in [DistanceCalculator class](src/main/java/com/bwsw/interview/distance/DistanceCalculator.java).
