@@ -20,8 +20,8 @@ public class FactorialCalculatorTest {
     @DataProvider
     public Object[][] invalidNumbers() {
         return new Object[][]{
-                {-1},
-                {13}
+                {-1, IllegalArgumentException.class},
+                {13, ArithmeticException.class}
         };
     }
 
@@ -31,7 +31,7 @@ public class FactorialCalculatorTest {
     }
 
     @Test(dataProvider = "invalidNumbers")
-    public void testCalculateInvalidCases(int number) {
-        assertThrows(() -> FactorialCalculator.calculate(number));
+    public void testCalculateInvalidCases(int number, Class<? extends Exception> exceptionClass) {
+        assertThrows(exceptionClass, () -> FactorialCalculator.calculate(number));
     }
 }
